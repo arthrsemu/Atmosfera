@@ -1,0 +1,299 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #ffb6c9;
+    --rosa-claro: #a5f2d6;
+    --amarelo: #ffe69a;
+    --roxo: #c9b6ff;
+    --azul: #b9e5ff;
+    --texto: #493747;
+    --papel: #fffaf2;
+}
+
+body {
+    color: var(--texto);
+    font-family: 'Nunito', sans-serif;
+
+    /* PAPEL DE PAREDE */
+    background-color: var(--papel);
+
+    background-image:
+        linear-gradient(
+            rgba(255, 228, 236, 0.35),
+            rgba(255, 228, 236, 0.35)
+        ),
+        url("../assents/imagens/wallpaper.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Caveat', cursive;
+}
+
+
+/* ========================================
+   2. CABEÇALHO E NAVEGAÇÃO
+======================================== */
+
+header {
+    background-color: var(--rosa-claro);
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e65c88;
+}
+
+
+/* ========================================
+   3. ESTRUTURA PRINCIPAL
+======================================== */
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   4. SEÇÕES DO SITE
+======================================== */
+
+/* Apresentação */
+
+#inicio {
+    background-color: var(--rosa-claro);
+    text-align: center;
+    padding: 80px 20px;
+
+    animation: aparecer 1s ease;
+}
+
+/* História */
+
+#historia {
+    background-color: var(--amarelo);
+}
+
+/* Galeria */
+
+#galeria {
+    background-color: var(--azul);
+}
+
+/* Cartinhas */
+
+#cartinhas {
+    background-color: var(--rosa);
+}
+
+/* Contador */
+
+#contador {
+    background-color: var(--roxo);
+    text-align: center;
+}
+
+/* Surpresa */
+
+#surpresa {
+    background-color: var(--amarelo);
+    text-align: center;
+}
+
+
+/* ========================================
+   5. GALERIA DE FOTOS
+======================================== */
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.galeria figure {
+    background-color: white;
+    padding: 12px 12px 20px;
+    width: 225px;
+
+    box-shadow: 3px 5px 12px #00000020;
+
+    transform: rotate(-3deg);
+    transition: transform 0.3s;
+}
+
+.galeria figure:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.galeria figure:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 2;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria figcaption {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   6. BOTÕES
+======================================== */
+
+button {
+    background-color: #ed8eae;
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #d96d94;
+    transform: scale(1.05);
+}
+
+#mensagem-surpresa {
+    margin-top: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+}
+
+
+/* ========================================
+   7. ADESIVOS E ANIMAÇÕES
+======================================== */
+
+.adesivo {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ========================================
+   8. RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    .galeria {
+        gap: 30px;
+    }
+
+    .galeria figure {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    #mensagem-surpresa {
+        font-size: 24px;
+    }
+}
