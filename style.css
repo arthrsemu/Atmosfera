@@ -31,7 +31,7 @@ body {
             rgba(255, 228, 236, 0.35),
             rgba(255, 228, 236, 0.35)
         ),
-        url("../assents/imagens/wallpaper.jpg");
+        url("wallpaper.jpg");
 
     background-size: cover;
     background-position: center;
