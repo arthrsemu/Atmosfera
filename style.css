@@ -297,3 +297,20 @@ button:hover {
         font-size: 24px;
     }
 }
+.menu {
+    animation: descer 1.2s ease-out forwards;
+    animation: descer 1.2s ease-out 0.3s both;
+}
+
+
+@keyframes descer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
