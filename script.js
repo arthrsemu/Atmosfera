@@ -1,7 +1,5 @@
 console.log("JavaScript conectado!");
 
-alert("Pagina está funcionando! ");
-
 const botao = document.getElementById("botao-surpresa");
 const mensagem = document.getElementById("mensagem-surpresa");
 
