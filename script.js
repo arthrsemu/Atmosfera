@@ -29,7 +29,7 @@ botao.addEventListener("click", function() {
 });
 
 
-const inicio = new Date(2026, 6, 30, 9, 34, 58);
+const inicio = new Date(2026, 6, 30, 10, 34, 58);
 
 const contador = document.getElementById("tempo-juntos");
 
